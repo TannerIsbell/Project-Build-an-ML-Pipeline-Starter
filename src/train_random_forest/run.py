@@ -94,7 +94,7 @@ def go(args):
     mlflow.sklearn.save_model(
         sk_pipe,
         path = "random_forest_dir",
-        input_example = X_train.iloc[:5]
+        input_example = X_train.iloc[:5],
     )
 
 
@@ -219,7 +219,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
         steps =[
             ("preprocessor", preprocessor),
             ("random_forest", random_forest) 
-        # YOUR CODE HERE
         ]
     )
 
